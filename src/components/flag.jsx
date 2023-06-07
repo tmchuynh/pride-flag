@@ -2,7 +2,6 @@ import React from 'react';
 import range from 'lodash.range';
 
 import styles from '../Style.modules/flag.module.css';
-import { COLORS } from './constants';
 
 function PrideFlag({
     variant = 'rainbow', // rainbow | rainbow-original | trans | pan
@@ -11,7 +10,6 @@ function PrideFlag({
     staggeredDelay = 100,
     billow = 2,
 }) {
-    const colors = COLORS[variant];
 
     const friendlyWidth =
         Math.round(width / numOfColumns) * numOfColumns;
