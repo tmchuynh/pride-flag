@@ -1,10 +1,9 @@
 import './App.css';
+import PrideFlag from './components/flag';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <PrideFlag/>
   );
 }
 
