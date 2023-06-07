@@ -2,21 +2,33 @@ import React from 'react';
 import range from 'lodash.range';
 
 import styles from '../Style.modules/flag.module.css';
+import { COLORS } from './constants';
 
 function PrideFlag({
-    numOfColumns,
+    variant = 'rainbow', // rainbow | rainbow-original | trans | pan
+    width = 200,
+    numOfColumns = 10,
     staggeredDelay = 100,
     billow = 2,
 }) {
+    const colors = COLORS[variant];
+
+    const friendlyWidth =
+        Math.round(width / numOfColumns) * numOfColumns;
+
+    const firstColumnDelay = numOfColumns * staggeredDelay * -1;
+
     return (
-        <div className={styles.flag}>
+        <div className={styles.flag} style={{ width: friendlyWidth }}>
             {range(numOfColumns).map((columnIndex) => (
                 <div
                     key={columnIndex}
                     className={styles.column}
                     style={{
                         '--billow': columnIndex * billow + 'px',
-                        animationDelay: columnIndex * staggeredDelay + 'ms',
+                        background: generateGradientString(colors),
+                        animationDelay:
+                            firstColumnDelay + columnIndex * staggeredDelay + 'ms',
                     }}
                 />
             ))}
