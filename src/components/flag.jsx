@@ -6,10 +6,10 @@ import { COLORS } from './colors';
 
 function PrideFlag({
     variant = 'rainbow', // rainbow | rainbow-original | trans | pan
-    width = 200,
-    numOfColumns = 10,
+    width = 400,
+    numOfColumns = 50,
     staggeredDelay = 100,
-    billow = 2,
+    billow = 10,
 }) {
     const colors = COLORS[variant];
 
