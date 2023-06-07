@@ -6,9 +6,9 @@ import { COLORS } from './colors';
 
 function PrideFlag({
     variant = 'rainbow', // rainbow | rainbow-original | trans | pan
-    width = 400,
-    numOfColumns = 50,
-    staggeredDelay = 100,
+    width = 1000,
+    numOfColumns = 100,
+    staggeredDelay = 25,
     billow = 10,
 }) {
     const colors = COLORS[variant];
